@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007BFF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Cmimet App">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <title>Oil Price</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        :root {
+            --myrtle-green: #0F4C4E; /* Green blue */
+            --olive-green: #BAB86C; /*gjelber ulliri */
+            --warm-white-Cornsilk: #FFF3DA; /*Bardhe e ngrohte */
+            --warm-white-floral: #FFFAED; /*Bardhe e ngrohte */
+            --silk: #FFF1E1; /*silk color */
+            --text-color: #ddd; /* Dark Gray */
+            --greiysh-turquoise: #5E7D7E; /* Light Gray */
+            --primary-blue: #003b6f; /* Deep Sea Blue */
+            --secondary-gold: #ffd700; /* Luxurious Gold */
+            --accent-white: #ffffff; /* White Accent */
+            --background-gradient: linear-gradient(to bottom, #87cefa, #4682b4); /* Sky to Ocean Gradient */
+            --button-hover: #ffa500; /* Warm Glow */
+            --seaside-villa: #e8d6cb;
+            --butter-cup: #f39c12;
+            --saffron-mango: #fabe58;
+            --merino: #f7efe8;
+        }
+
+        body {
+            background-color: var(--greiysh-turquoise);
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        #cmimetPart {
+            background-color: var(--myrtle-green);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            margin: auto;
+        }
+
+        #formSubtitle {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--warm-white-floral);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        label.cmimeLabel,
+        label.infoLabel {
+            display: block;
+            margin: 12px 0 5px;
+            font-size: 16px;
+            color: var(--warm-white-floral);
+        }
+
+        .cmimeInput,
+        .totalOutput {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+
+        .totalOutput {
+            font-weight: bold;
+            font-size: 17px;
+            background-color: var(--warm-white-Cornsilk);
+        }
+
+            .cmimeInput:focus, .totalOutput:focus {
+                outline: none;
+                border-color: #007BFF;
+                box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+            }
+
+        .currency {
+            float: right;
+            margin-top: -35px;
+            margin-right: 10px;
+            color: #555;
+            font-size: 18px;
+        }
+
+        .detailContainer {
+            margin-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            #cmimetPart {
+                padding: 15px;
+            }
+
+            .infoLabel {
+                font-weight: bold;
+                font-size: 17px;
+            }
+
+            label.cmimeLabel {
+                font-size: 15px;
+            }
+
+            .cmimeInput {
+                font-size: 15px;
+            }
+
+            .currency {
+                font-size: 16px;
+                margin-top: -30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cmimetPart">
+        <p id="formSubtitle">ÇMIMET</p><br>
+        <label for="Platz" class="cmimeLabel">Platz:</label>
+        <input type="number" class="cmimeInput" id="Platz" name="Platz" value=0>
+        <span class="currency">&dollar;</span><br>
+
+        <label for="premio" class="cmimeLabel">Premio:</label>
+        <input type="number" class="cmimeInput" id="premio" name="premio" value=0>
+        <span class="currency">&dollar;</span><br>
+
+        <label for="density" class="cmimeLabel">Density:</label>
+        <input type="number" class="cmimeInput" id="density" name="density" value=0>
+        <span class="currency">&dollar;</span><br>
+
+        <label for="escalation" class="cmimeLabel">Escalation:</label>
+        <input type="number" class="cmimeInput" id="escalation" name="escalation" value=0 readonly>
+        <span class="currency">&dollar;</span><br>
+
+        <label for="portualtaxes" class="cmimeLabel">Taksa Port:</label>
+        <input type="number" class="cmimeInput" id="portualtaxes" name="portualtaxes" value=0>
+        <span class="currency">&dollar;</span><br><br>
+
+        <div class="detailContainer">
+            <label for="finalprice" class="infoLabel">CMIMI FUNDOR:</label><br>
+            <input type="text" class="totalOutput" id="finalprice" name="finalprice" value=0 readonly>
+            <span class="currency">&dollar;</span>
+        </div><br>
+
+        <label for="profit" class="cmimeLabel">Fitim:</label>
+        <input type="number" class="cmimeInput" id="profit" name="profit" value=0>
+        <span class="currency">&dollar;</span><br><br>
+
+        <div class="detailContainer">
+            <label for="total" class="infoLabel">VLERA:</label><br>
+            <input type="text" class="totalOutput" id="total" name="total" value=0 readonly>
+            <span class="currency">&dollar;</span>
+        </div>
+    </div>
+
+    <script>
+        const fieldIds = [
+            "Platz", "premio", "density", "portualtaxes", "profit"
+        ];
+        const escalationInput = document.getElementById("escalation");
+        const finalPriceInput = document.getElementById("finalprice");
+        const totalInput = document.getElementById("total");
+
+        function saveToLocalStorage() {
+            fieldIds.forEach(id => {
+                const el = document.getElementById(id);
+                localStorage.setItem(id, el.value);
+            });
+        }
+
+        function loadFromLocalStorage() {
+            fieldIds.forEach(id => {
+                const el = document.getElementById(id);
+                const saved = localStorage.getItem(id);
+                if (saved !== null) el.value = saved;
+            });
+        }
+
+        function clearZeroOnFocus(input) {
+            input.addEventListener("focus", () => {
+                if (input.value === "0") input.value = "";
+            });
+            input.addEventListener("blur", () => {
+                if (input.value === "") input.value = "0";
+            });
+        }
+
+        function calculateAll() {
+            const platz = parseFloat(document.getElementById("Platz").value) || 0;
+            const premio = parseFloat(document.getElementById("premio").value) || 0;
+            const density = parseFloat(document.getElementById("density").value) || 0;
+            const portualtaxes = parseFloat(document.getElementById("portualtaxes").value) || 0;
+            const profit = parseFloat(document.getElementById("profit").value) || 0;
+
+            // Escalation = 0.845 / density
+            const escalation = density !== 0 ? 0.845 / density : 0;
+            escalationInput.value = escalation.toFixed(3);
+
+            // Final price = (platz + premio) * escalation + portualtaxes
+            const finalprice = ((platz + premio) * escalation) + portualtaxes;
+            finalPriceInput.value = finalprice.toFixed(2);
+
+            // Total = finalprice + profit
+            const total = finalprice + profit;
+            totalInput.value = total.toFixed(2);
+
+            // Save values
+            saveToLocalStorage();
+        }
+
+        // Set up input events
+        fieldIds.forEach(id => {
+            const input = document.getElementById(id);
+            input.addEventListener("input", calculateAll);
+            clearZeroOnFocus(input);
+        });
+
+        // Load previous values on startup
+        loadFromLocalStorage();
+        calculateAll();
+        if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('service-worker.js')
+      .then(reg => console.log('Service worker registered.', reg))
+      .catch(err => console.error('Service worker not registered:', err));
+  });
+}
+
+    </script>
+</body>
+</html>

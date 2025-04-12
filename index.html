@@ -46,18 +46,24 @@
         }
 
         #cmimetPart {
-            background-color: var(--myrtle-green);
+            background-color: var(--silk);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             max-width: 100%;
             margin: auto;
+            font-size: 20px;
         }
-
+        #escalation {
+            background-color: var(--merino);
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 17px;
+        }
         #formSubtitle {
             font-size: 22px;
             font-weight: bold;
-            color: var(--warm-white-floral);
+            color: var(--primary-blue);
             margin-bottom: 15px;
             text-align: center;
         }
@@ -67,7 +73,7 @@
             display: block;
             margin: 12px 0 5px;
             font-size: 16px;
-            color: var(--warm-white-floral);
+            color: var(--primary-blue);
         }
 
         .cmimeInput,
@@ -84,7 +90,8 @@
         .totalOutput {
             font-weight: bold;
             font-size: 17px;
-            background-color: var(--warm-white-Cornsilk);
+            background-color: var(--merino);
+            color: var(--primary-blue);
         }
 
             .cmimeInput:focus, .totalOutput:focus {
@@ -102,17 +109,18 @@
         }
 
         .detailContainer {
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         @media (max-width: 600px) {
             body {
-                padding: 12px;
+                padding: 5px;
             }
 
             #cmimetPart {
-                padding: 15px;
+                padding: 5px;
             }
+           
 
             .infoLabel {
                 font-weight: bold;
@@ -124,7 +132,7 @@
             }
 
             .cmimeInput {
-                font-size: 15px;
+                font-size: 10px;
             }
 
             .currency {
